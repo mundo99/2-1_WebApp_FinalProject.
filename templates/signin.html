@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>렌트와 로그인</title>
+  <link href="static/img/favicon.JPG" rel="icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="static/css/style.css" rel="stylesheet">
+  <link href="static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ======= Header/Navbar ======= -->
+  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="navbar-brand text-brand" href="/"><span class="color-b">렌트와</span></a>
+
+      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link " href="/">홈</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="/about">회사소개</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="/propertygrid">차량소개</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="/bloggrid">예약하기</a>
+          </li>
+        </ul>
+      </div>
+      {% if session['email'] %}
+      <a class="nav-link" href="/logout">로그아웃</a>
+  {% else %}
+      <a class="nav-link active" href="/signin">로그인</a>
+      {% endif %}
+
+     
+
+    </div>
+  </nav><!-- End Header/Navbar -->
+  <br>
+<div class="container">
+  <h2>로그인</h2>
+  <form action="/signin" method="POST">
+    <div class="form-group">
+      <label for="email">이메일:</label>
+      <input type="email" class="form-control" id="email" placeholder="a@a.com" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">비밀번호:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="패스워드입력" name="pswd">
+    </div>
+    <a class="nav-link " href="/signup" style="text-align:right;">회원가입</a>
+    <button type="submit" class="btn btn-primary">로그인</button>
+   
+  </form>
+</div>
+
+</body>
+
+</html>
+
+</body>
+</html>
